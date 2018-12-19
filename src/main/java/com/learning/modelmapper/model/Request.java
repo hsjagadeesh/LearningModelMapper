@@ -4,8 +4,8 @@ public class Request {
 
     private Long requestId;
     private String title;
-    private Classification classification;
-    private Reproducible reproducible;
+    private String classification;
+    private String reproducible;
 
     public Long getRequestId() {
         return requestId;
@@ -23,19 +23,19 @@ public class Request {
         this.title = title;
     }
 
-    public Classification getClassification() {
+    public String getClassification() {
         return classification;
     }
 
-    public void setClassification(Classification classification) {
+    public void setClassification(String classification) {
         this.classification = classification;
     }
 
-    public Reproducible getReproducible() {
+    public String getReproducible() {
         return reproducible;
     }
 
-    public void setReproducible(Reproducible reproducible) {
+    public void setReproducible(String reproducible) {
         this.reproducible = reproducible;
     }
 }
