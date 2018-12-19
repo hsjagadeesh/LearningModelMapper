@@ -1,7 +1,7 @@
 package com.learning.modelmapper;
 
-import com.learning.modelmapper.model.ProblemClassification;
-import com.learning.modelmapper.model.ProblemReproducible;
+import com.learning.modelmapper.model.Classification;
+import com.learning.modelmapper.model.Reproducible;
 import com.learning.modelmapper.model.Request;
 import com.learning.modelmapper.model.RequestDTO;
 import org.modelmapper.Converter;
@@ -15,11 +15,11 @@ public class ModelMapperTest {
         Request request = new Request();
         request.setRequestId(101L);
         request.setTitle("Title");
-        request.setClassification(ProblemClassification.POWER);
-        request.setReproducible(ProblemReproducible.ALWAYS);
+        request.setClassification(Classification.POWER);
+        request.setReproducible(Reproducible.ALWAYS);
 
-//        Converter<ProblemClassification, Integer> classificationConverter = ctx -> ctx.getSource() == null ? null : ctx.getSource().getCode();
-        Converter<ProblemReproducible, Integer> reproducibleConverter = ctx -> ctx.getSource() == null ? null : ctx.getSource().getCode();
+//        Converter<Classification, Integer> classificationConverter = ctx -> ctx.getSource() == null ? null : ctx.getSource().getCode();
+        Converter<Reproducible, Integer> reproducibleConverter = ctx -> ctx.getSource() == null ? null : ctx.getSource().getCode();
 
         ModelMapper modelMapper = new ModelMapper();
         PropertyMap<Request, RequestDTO> requestRequestDTOPropertyMap = new PropertyMap<Request, RequestDTO>() {

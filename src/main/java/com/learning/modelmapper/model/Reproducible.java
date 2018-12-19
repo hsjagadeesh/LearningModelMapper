@@ -3,7 +3,7 @@ package com.learning.modelmapper.model;
 import java.util.Arrays;
 import java.util.Optional;
 
-public enum ProblemReproducible {
+public enum Reproducible {
 
     ALWAYS(1, "Always"),
     SOMETIMES(2, "Sometimes"),
@@ -15,7 +15,7 @@ public enum ProblemReproducible {
     private final Integer code;
     private final String  name;
 
-    ProblemReproducible(final int code, final String name) {
+    Reproducible(final int code, final String name) {
         this.code = code;
         this.name = name;
     }
@@ -28,8 +28,8 @@ public enum ProblemReproducible {
         return name;
     }
 
-    public static ProblemReproducible getProblemReproducibleByName(String name) {
-        Optional<ProblemReproducible> problemReproducible = Arrays.asList(ProblemReproducible.values()).stream()
+    public static Reproducible getProblemReproducibleByName(String name) {
+        Optional<Reproducible> problemReproducible = Arrays.asList(Reproducible.values()).stream()
                 .filter(item -> item.getName().equalsIgnoreCase(name))
                 .findFirst();
         return problemReproducible.isPresent() ? problemReproducible.get() : null;
